@@ -3,24 +3,24 @@
 clear all; clc;
 
 %PARAMETERS
-alpha         = 0.35;                       % Capital share   
+alpha         = 0.33;                       % Capital share   
 delta         = 0.1;                        % Depreciation
-gamma         = 2;                          % CRRA utility with parameter s
+gamma         = 1.5;                          % CRRA utility with parameter s
 rho           = 0.05;                       % discount rate
 la1           = 0.5;                        % transition prob
-la2           = 1/3;
-z1            = 0.93;                       % labor productivity
+la2           = 0.5;
+z1            = 0.45;                       % labor productivity
 z2            = 1+ la2/la1 *(1- z1);
 amin          = 0;                          % borrowing constraint
-amax          = 30;                         % max value of assets
+amax          = 20;                         % max value of assets
                        
 I        = 1001;                            % numer of points between amin and amax, please make it end in 1
 maxit    = 100;                             % max number of iterations
 crit     = 10^(-6);                         % convergence ctrit 
 Delta    = 1000;                            % Delta in HJB
-maxitK   = 400;                             % max number of iterations
-critK    = 10^(-3);                         % convergence ctrit
-weK      = 0.001;                           % Weigth in the relaxation algorithm
+maxitK   = 4000;                             % max number of iterations
+critK    = 10^(-6);                         % convergence ctrit
+weK      = 0.01;                           % Weigth in the relaxation algorithm
 
 parameters.alpha  = alpha;
 parameters.delta  = delta;

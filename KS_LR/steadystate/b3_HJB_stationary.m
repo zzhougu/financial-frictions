@@ -77,7 +77,7 @@ for n = 1:maxit
     
     dV_Upwind    = dVf.*If + dVb.*Ib + dV0.*I0; %important to include third term
     c            = (dV_Upwind).^(-1/gamma);
-    u            = (c.^(1-gamma)-1)/(1-gamma);
+    u            = (c.^(1-gamma)-1)/(1-gamma) - 1/2 * 1.0 * ((aa-1.0).^2.*(aa<1.0));
 
     
     %CONSTRUCT MATRIX A

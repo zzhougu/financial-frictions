@@ -75,7 +75,7 @@ for itHJB = 1:maxitHJB
     
     dVda_upwind  = dVda_f.*If + dVda_b.*Ib + dVda_0.*I0;    %important to include third term
     c            = (dVda_upwind).^(-1/gamma);
-    u            = (c.^(1-gamma)-1)/(1-gamma);
+    u            = (c.^(1-gamma)-1)/(1-gamma) - 1/2 * 1.0 * ((a-1.0).^2.*(a<1.0));
     
     % Elements for constructing my very big sparse matrix A3
     elem_a       = (-ssb.*Ib)/da;
